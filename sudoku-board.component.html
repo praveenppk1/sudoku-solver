@@ -1,0 +1,21 @@
+<table class="table table-bordered text-center">
+    <tbody>
+      <tr *ngFor="let row of board; let i = index">
+        <td *ngFor="let cell of row; let j = index" class="p-0">
+          <input
+            type="text"
+            maxlength="1"
+            [(ngModel)]="board[i][j]"
+            class="form-control text-center"
+            style="width: 45px; height: 45px; font-size: 18px;"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="text-center mt-3">
+    <button class="btn btn-success me-2" (click)="solveSudoku()">Solve</button>
+    <button class="btn btn-danger" (click)="clearBoard()">Clear</button>
+  </div>
+  
